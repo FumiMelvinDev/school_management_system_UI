@@ -1,0 +1,71 @@
+"use client";
+
+import Image from "next/image";
+import { RadialBar, RadialBarChart, ResponsiveContainer } from "recharts";
+
+const MatricChart = () => {
+  const data = [
+    {
+      name: "Total",
+      count: 245,
+      fill: "white",
+    },
+    {
+      name: "Girls",
+      count: 111,
+      fill: "#F6AE2D",
+    },
+    {
+      name: "Boys",
+      count: 134,
+      fill: "#9CC6D3",
+    },
+  ];
+
+  return (
+    <div className="bg-white rounded-xl w-full h-full p-4">
+      {/* Title */}
+      <div className="flex items-center justify-between">
+        <h1 className="text-xl font-semibold">Matric Students</h1>
+        <Image src="/moreDark.png" alt="more icon" width={20} height={20} />
+      </div>
+      {/* Chart */}
+      <div className="relative w-full h-[75%]">
+        <ResponsiveContainer width="100%" height="100%">
+          <RadialBarChart
+            cx="50%"
+            cy="50%"
+            innerRadius="40%"
+            outerRadius="100%"
+            barSize={30}
+            data={data}
+          >
+            <RadialBar background dataKey="count" />
+          </RadialBarChart>
+        </ResponsiveContainer>
+        <Image
+          src="/maleFemale.png"
+          alt="more icon"
+          width={50}
+          height={50}
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+        />
+      </div>
+      {/* Bottom */}
+      <div className="flex items-center justify-between gap-16">
+        <div className="flex flex-col gap-1">
+          <div className="w-5 h-5 bg-sedieBlue rounded-full" />
+          <h1 className="font-bold">111</h1>
+          <h2 className="text-xs text-gray-500">Boys (55%)</h2>
+        </div>
+        <div className="flex flex-col gap-1">
+          <div className="w-5 h-5 bg-sedieYellow rounded-full" />
+          <h1 className="font-bold">134</h1>
+          <h2 className="text-xs text-gray-500">Girls (45%)</h2>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default MatricChart;

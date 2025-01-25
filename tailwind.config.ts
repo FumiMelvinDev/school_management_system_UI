@@ -11,6 +11,13 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        // colors
+        sedieBlue: "#9CC6D3",
+        sedieLightBlue: "#9BD1E5",
+        sediePurple: "#A267A2",
+        sedieLightPurple: "#BD93BD",
+        sedieYellow: "#F6AE2D",
+        sedieLightYellow: "#F8C462",
       },
     },
   },
