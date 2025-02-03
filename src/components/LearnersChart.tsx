@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import {
   BarChart,
   Bar,
@@ -43,6 +44,10 @@ const LearnersChart = () => {
 
   return (
     <div className="bg-white rounded-xl w-full h-full p-4">
+      <div className="flex items-center justify-between">
+        <h1 className="text-xl font-semibold">Matric Students</h1>
+        <Image src="/moreDark.png" alt="more icon" width={20} height={20} />
+      </div>
       <ResponsiveContainer width="100%" height="100%">
         <BarChart
           width={500}
@@ -54,12 +59,17 @@ const LearnersChart = () => {
             left: 15,
             bottom: 5,
           }}
+          barSize={35}
         >
-          <CartesianGrid strokeDasharray="3 3" />
+          <CartesianGrid strokeDasharray="3 3" vertical={false} />
           <XAxis dataKey="name" />
-          <YAxis />
+          <YAxis domain={[0, 600]} />
           <Tooltip />
-          <Legend />
+          <Legend
+            align="left"
+            verticalAlign="top"
+            wrapperStyle={{ paddingTop: "20px", paddingBottom: "40px" }}
+          />
           <Bar dataKey="Male" stackId="a" fill="#9CC6D3" />
           <Bar dataKey="Female" stackId="a" fill="#F6AE2D" />
         </BarChart>

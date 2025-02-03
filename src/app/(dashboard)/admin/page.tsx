@@ -1,5 +1,7 @@
+import Announcements from "@/components/Announcements";
 import LearnersChart from "@/components/LearnersChart";
 import MatricChart from "@/components/MatricChart";
+import SchoolCalendar from "@/components/School_Calendar";
 import UserCard from "@/components/UserCard";
 
 const AdminPage = () => {
@@ -15,18 +17,22 @@ const AdminPage = () => {
           <UserCard type="Total Staff" />
         </div>
 
-        {/* Middle Charts */}
+        {/* Middle */}
         <div className="flex gap-4 flex-col lg:flex-row">
-          <div className="w-full lg:w-1/3 h-[450px]">
+          <div className="w-full lg:w-1/3 h-[400px]">
             <MatricChart />
           </div>
-          <div className="w-full lg:w-2/3 h-[450px]">
+          <div className="w-full lg:w-2/3 h-[400px]">
             <LearnersChart />
           </div>
         </div>
+
+        <Announcements />
       </div>
       {/* Right */}
-      <div className="w-full lg:w-1/3"></div>
+      <div className="w-full lg:w-1/3 flex flex-col gap-8">
+        <SchoolCalendar />
+      </div>
     </div>
   );
 };
