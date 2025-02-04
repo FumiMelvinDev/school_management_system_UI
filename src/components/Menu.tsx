@@ -17,11 +17,6 @@ const Menu = () => {
           href: "/teachers",
         },
         {
-          icon: "/student.png",
-          label: "Students",
-          href: "/students",
-        },
-        {
           icon: "/class.png",
           label: "Classes",
           href: "/classes",
