@@ -37,15 +37,18 @@ const SchoolCalendar = () => {
   const [value, onChange] = useState<Value>(new Date());
 
   return (
-    <div className="bg-white p-4 rounded-lg">
+    <div className="bg-white p-4 rounded-lg mt-8">
       <Calendar onChange={onChange} value={value} />
       <div className="flex items-center justify-between">
-        <h1 className="text-xl font-semibold">Matric Students</h1>
+        <h1 className="text-xl font-semibold">Upcoming Events</h1>
         <Image src="/moreDark.png" alt="more icon" width={20} height={20} />
       </div>
       <div className="flex flex-col gap-4">
         {events.map((event) => (
-          <div className="p-5 rounded-md border-2 border-gray-100 border-t-4 odd:border-t-sedieLightPurple even:border-t-sedieLightYellow" key={event.id}>
+          <div
+            className="p-5 rounded-md border-2 border-gray-100 border-t-4 odd:border-t-sedieLightPurple even:border-t-sedieLightYellow"
+            key={event.id}
+          >
             <div className="flex items-center justify-between">
               <h1 className="font-semibold text-gray-600">{event.title}</h1>
               <span className="text-xs text-gray-400">{event.time}</span>
